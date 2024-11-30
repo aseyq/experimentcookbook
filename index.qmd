@@ -16,15 +16,25 @@ This book serves as a guide to programming experiments using [oTree](http://www.
 The book is tailored for researchers, especially those with limited programming experience, who want to design and code their own experiments. It follows a step-by-step approach, simplifying potentially challenging concepts for readers new to programming. Additionally, it includes chapters on advanced topics and a collection of recipes (hence the "cookbook" theme 🙂) to support experienced users.
 
 
-#### Who are the authors?
+#### Who are we?
 
-**Ali Seyhun Saral** is a data and behavioral scientist at the [CEB, United Nations](https://unsceb.org/). His research focuses on cooperation, group decision-making, and social learning, utilizing methods from microeconomics, game theory, behavioral and experimental economics, agent-based modeling, and social choice theory. He is also interested in software development related to experiments, data analysis, and machine learning. He has held positions as a postdoctoral researcher at the [Institute for Advanced Study in Toulouse](https://www.iast.fr/) and the [University of Bologna](https://www.unibo.it/en), as well as serving as a lab manager at the [Max Planck Institute for Research on Collective Goods](https://www.coll.mpg.de/) and the [Bilgi Economics Lab of Istanbul](https://belis.bilgi.edu.tr). 
+:::{.grid}
+::: {.g-col-6}
+**Ali Seyhun Saral** is a data and behavioral scientist at the [CEB, United Nations](https://unsceb.org/). His research focuses on cooperation, group decision-making, and social learning, utilizing methods from microeconomics, game theory, behavioral and experimental economics, agent-based modeling, and social choice theory. He has held positions as a postdoctoral researcher at the [Institute for Advanced Study in Toulouse](https://www.iast.fr/) and the [University of Bologna](https://www.unibo.it/en), as well as serving as a lab manager at the [Max Planck Institute for Research on Collective Goods](https://www.coll.mpg.de/) and the [Bilgi Economics Lab of Istanbul](https://belis.bilgi.edu.tr). 
 
 For more information, visit his [personal website](https://www.saral.it/).
 
+:::
+
+::: {.g-col-6}
 **Austėja Kažemekaitytė** is a postdoctoral research fellow at the [Department of Economics and Management at the University of Trento](https://www.economia.unitn.it/en). Her research centers on individual decision-making within the framework of behavioral economics, with current work involving psychophysiological measures in consumer choice as part of the COMFOCUS project. Austėja's research interests also include vulnerability, the psychology of poverty, and behavioral public policy. 
 
 For more information, visit her [personal website](https://austejakazemekaityte.com/).
+
+:::
+:::
+
+
 
 #### How to use this book?
 
