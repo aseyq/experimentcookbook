@@ -7,9 +7,11 @@ book:
   page-navigation: true
   title: "Experiment Cookbook"
   subtitle: "A tutorial on running experiments with oTree"
-  author: "Ali Seyhun Saral"
+  author: 
+    - Ali Seyhun Saral
+    - Austėja Kažemekaitytė
   cover-image: cover_web.png
-  date: "2024-10-01"
+  date: "2025-01-15"
   sidebar: 
     logo: cover_web.png
     title: "Experiment Cookbook"

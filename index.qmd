@@ -1,7 +1,13 @@
 # Preface {.unnumbered}
 
 ::: {.callout-note}
-This book is a work in progress and its not complete. I am updating the pages at the moment and it will be published officially on the 1st of October, 2024. 
+This book is a work in progress and is being published online as it is written. **The current version is a draft**. 
+
+We welcome feedback and suggestions. You can provide feedback by opening an issue on the [GitHub repository](www.github.com/aseyq/experimentcookbook).
+
+
+
+. I am updating the pages at the moment and it will be published officially on the 1st of October, 2024. 
 
 You can refer to the [slides of the course I gave recently](https://github.com/aseyq/imprs).
 
