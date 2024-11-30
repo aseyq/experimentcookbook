@@ -1,0 +1,96 @@
+project:
+  type: book
+  preview:
+    port: 4200
+
+book:
+  page-navigation: true
+  title: "Experiment Cookbook"
+  subtitle: "A tutorial on running experiments with oTree"
+  author: "Ali Seyhun Saral"
+  cover-image: cover_web.png
+  date: "2024-10-01"
+  sidebar: 
+    logo: cover_web.png
+    title: "Experiment Cookbook"
+  chapters:
+    - index.qmd
+    - part: 📗 Introduction to oTree
+    - part: 📗 Individual Decisions
+      chapters: 
+        - part_otree/create-project.qmd
+        - part_otree/survey.qmd
+    - part: "📗 Group Decisions"
+      chapters:
+        - part_otree/groups-overview.qmd
+        - part_otree/homogenous_groups.qmd
+        - part_otree/guessing-game.qmd
+        - part_otree/heterogenous_groups.qmd
+        - part_otree/ultimatum_game.qmd
+    - part: "📗 Roles and Matching"
+      chapters:
+        - part_rolesmatching/roles.qmd
+        - part_rolesmatching/managing_roles.qmd
+        - part_rolesmatching/matching.qmd
+        - part_rolesmatching/matching_with_roles.qmd
+        - part_rolesmatching/rubinstein.qmd
+        - part_rolesmatching/advanced_grouping.qmd
+    - part: "📗 Apps"
+    - part: "📗 Real Time Interaction"
+    - part: "📗 Deploying Experiments"
+    # - part: "📙 Cookbook Recipes"
+    #   chapters:
+        # - part_recipes/outsourcing.qmd
+        # - part_recipes/storing.qmd
+        # - part_recipes/alternative_currencies.qmd
+        # - part_recipes/uploading_experiments.qmd
+        # - part_recipes/deploying_experiments_otreehub.qmd
+        # - part_recipes/deploying_experiments_heroku.qmd
+        # - part_recipes/deploying_experiments_render.qmd
+        # - part_recipes/deploying_experiments_server.qmd
+    - part: "📒 Crash Course: Python"
+      chapters:
+        - part_python/python-intro.qmd
+        - part_python/virtual-environments.qmd
+    - part: "📒 Crash Course: Terminal"
+      chapters:
+        - part_terminal/terminal-intro.qmd
+    - part: "📒 Crash Course: Git"
+      chapters:
+        - part_git/git-intro.qmd
+    - part: "📒 Crash Course: HTML & CSS"
+      chapters:
+        - part_htmlcss/htmlcss-intro.qmd
+    - part: "📒 Crash Course: JavaScript"
+      chapters:
+        - part_javascript/javascript-intro.qmd
+    
+    
+    - references.qmd
+crossref: 
+  fig-title: Fig
+
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: flatly
+    # theme: sandstone #nice!
+    # theme: simplex
+    css: custom_styles.css
+    code-copy: true
+    reference-location: margin
+    highlight-style: tango
+    number-sections: false
+    toc-depth: 2
+    include-after-body: plausible.html
+    
+
+
+
+  # pdf:
+  #   documentclass: scrreprt
+
+
+

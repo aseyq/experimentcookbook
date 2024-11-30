@@ -1,0 +1,2 @@
+# Storing constants and others
+here be dragons

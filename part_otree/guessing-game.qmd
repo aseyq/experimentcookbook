@@ -1,0 +1,373 @@
+# Guessing Game 
+
+```{.python filename="__init__.py"}
+# ...
+class Group(BaseGroup):
+    target_number = models.FloatField()
+    average_guess = models.FloatField()
+# ...
+```
+Guessing game (also called as the Beauty Contest Game) is a game theory experiment demonstrate how people don't do backward induction fully and but over time converge to the theoretical predictions.[@nagel1995unraveling].
+
+## Game Rules {.unnumbered}
+- Each player chooses a number between 0 and 100.
+
+- The person who chooses the number closest to 2/3 of the average of all numbers chosen wins.
+
+- It is often played with several rounds, and between rounds the winning number and person are announced.
+
+## Pages {.unnumbered}
+- We should have two pages:
+    - A page where players can enter their guess. Let's call it `Guess`
+
+    - A page where players can see the results of the round. Let's call it `Results` (in fact, oTree default app template already has a page called `Results` so we will can use that page instead of creating a new one)
+
+To summarize:
+
+| Page    | Description                                                                 |
+| ------- | --------------------------------------------------------------------------- |
+| Guess   | A page where players can enter their guess                                   |
+| Results | A page where players can see the results of the round                        |
+
+## Data Structure (Models and Fields) {.unnumbered}
+
+- Each should player has a `guess` field to store the number they choose. This is the similar to our Survey, as it is an individual field. 
+
+- Then each group should have a `target_number`. We can calculate it directly and record it but for convenience, let's also store the group average in a field called `average_guess`.
+
+- We need to determine everybody's difference from the winning number. We can call it `guess_difference`. This, apparently is an individual field too as it will be different for each player.
+
+- We will calculate the person who is closest to the winning number. Then we can store the `is_winner` field for that person. 
+
+
+- And finally, we need to determine a fixed reward for the winner. We can call it `reward`. We can store it in a constant, as it will be the same for every group/player.
+
+To summarize:
+
+| Model    | Field            | Type     | Description                                                      |
+| -------- | ---------------- | -------  | ---------------------------------------------------------------- |
+| Constant | reward           | Currency | The reward for the winner                                        |
+| Player   | guess            | Float    | The number the player chooses                                    |
+| Player   | guess_difference | Float    | The difference between the player's guess and the winning number |
+| Player   | is_winner        | Boolean  | Whether the player is the winner                                 |
+| Group    | target_number    | Float    | The winning number                                               |
+| Group    | average_guess    | Float    | The average of all guesses                                       |
+
+
+
+
+## Code {.unnumbered}
+
+- Start a new app and add it to `settings.py`:
+
+```bash
+otree startapp guessing
+```
+
+```{.python filename="settings.py"}
+# ...
+SESSION_CONFIGS = [
+    dict(
+        name='guessing',
+        app_sequence=['guessing'],
+        num_demo_participants=3,
+    ),
+# ... other apps 
+    ]
+# ...
+```
+
+- We can start by what we already know from the survey we built: Collecting the `guess` field from the participants. 
+
+- oTree generates a default page called MyPage. We can change the name of this page by:
+  1. Renaming `guessing/MyPage.html` to `Guess.html`.
+  2. Changing `class MyPage(Page):` to `class Guess(Page):` in `__init__.py`.
+  3. And finally renaming `MyPage` to `Guess` in `page_sequence` list in `__init__.py`.
+
+So, the last part of our `__init__.py` should look like this:
+
+```{.python filename="__init__.py"}
+# ...
+
+# PAGES
+class Guessing(Page):
+    pass
+
+
+class ResultsWaitPage(WaitPage):
+    pass
+
+
+class Results(Page):
+    pass
+
+
+page_sequence = [Guessing, ResultsWaitPage, Results]
+```
+
+- Let's prepare our `Guessing.html` by modifying the text in it.
+
+```{.html filename="Guessing.html"}
+{{ block title }}
+    Please enter your guess
+{{ endblock }}
+{{ block content }}
+    <p> Guess a number between 0 and 100.</p>
+    <p> If your answer is closest to the 2/3 of the mean answer, 
+        you will earn 10 points. </p>
+
+    {{ formfields }}
+    {{ next_button }}
+
+{{ endblock }}
+```
+
+Then let's add the `guess` field to our `Player` model. 
+
+```{.python filename="__init__.py"}
+# ...
+class Player(BasePlayer):
+    guess = models.IntegerField(min=0, max=100, label='Please enter your guess.')
+# ...
+```
+
+and finally, let's add the `guess` field to our `Guessing` page.
+
+```{.python filename="__init__.py"}
+# ...
+class Guessing(Page):
+    form_model = 'player'
+    form_fields = ['guess']
+# ...
+```
+
+![First look at our guessing game](guessing_firstlook.png){#fig-guessing-firstlook}
+
+
+
+
+### Constants {.unnumbered}
+
+Now let's add our parameters. You can see that in `C` class, we already have several parameters:
+
+- `NAME_IN_URL`: This is the name of the app in the URL. It is rarely modified. But participants see this name on their browser's adress bar when they are playing the game. So if it's too revealing, you might want to change it.
+
+- `PLAYERS_PER_GROUP`: This is the number of players in each group. For demonstration we have 3 people in each group, so let's set it to 3.
+
+- `NUM_ROUNDS`: This is the number of rounds in the game. We will set it to 4.
+
+As we discussed above, we would like to define the reward for the winner as a constant.
+
+
+So our `C` class should look like this:
+
+```{.python filename="__init__.py"}
+class C(BaseConstants):
+    NAME_IN_URL = 'guessing'
+    PLAYERS_PER_GROUP = 3
+    NUM_ROUNDS = 4
+    
+    reward = cu(10)
+```
+
+
+
+Now let's look at the class `C`. We'd like to change the number of players in the game. Let's modify the `PLAYERS_PER_GROUP` to 3. 
+
+Then we need to define the reward for the winner. Let's do these changes.
+
+```{.python filename="__init__.py"}
+# ...
+class C(BaseConstants):
+    NAME_IN_URL = 'guessing'
+    PLAYERS_PER_GROUP = None
+    NUM_ROUNDS = 1
+    
+    reward = cu(10)
+
+# ...
+```
+In the reward, instead of setting reward as an integer (`reward = 10`), we are using using `cu` function to wrap it up. This  convert the number to a currency field. You can define it as a number directly but it is useful to define it as a currency field so that you can use it in the templates directly (We will see this next.) It also is more robust in roundings and so on but we will not get into that here. So the rule of thumb is to use `cu` function whenever you are dealing with money and experimental points.
+
+Regarding the `reward`, let's go back to the `Guessing.html` now and see the line we talk about it. 
+
+```{.html}
+<p> If your answer is closest to the 2/3 of the mean answer, 
+        you will earn 10 points. </p>
+```
+
+Now that we have defined the reward as a constant, we can use it in the template. Let's change the line to:
+
+```{.html filename="Guessing.html"}
+<p> If your answer is closest to the 2/3 of the mean answer, 
+        you will earn {{ C.reward }}. </p>
+```
+
+Notice that `{{ C.reward }}` will not just be replaced by 10, but also it will get the name of the currency (points as the default). So if you change the reward or the currency, it will be reflected in the template automatically. If you'd like to know about how to use different names for the points or real currencies, see [Using alternative currencies](../part_recipes/alternative_currencies.qmd)
+
+Let's move on and add other columns to our `Player` and `Group` models.
+
+#### Player {.unnumbered}
+
+```{.python filename="__init__.py"}
+# ...
+class Player(BasePlayer):
+    guess = models.IntegerField(min=0, max=100, label='Please enter your guess.')
+    guess_difference = models.FloatField()
+    is_winner = models.BooleanField(initial=False)
+    
+```
+
+#### Group {.unnumbered}
+
+```{.python filename="__init__.py"}
+# ...
+class Group(BaseGroup):
+    target_number = models.FloatField()
+    average_guess = models.FloatField()
+# ...
+```
+
+So we have defined all the fields we need and they should be available in the database[^constantdb].
+
+[^constantdb]: Except for the `reward` field which is a constant and not stored in the database. But you can store it to another field `Player` or `Subsession` if you'd like. See the recipe [Storing Constants](../part_recipes/storing.qmd)).
+
+
+### Results page
+Recall that we already had a `Results` page created by oTree. Let's prepare it for our game. 
+
+Our `Result` class in `__init__.py` looks like this:
+
+
+```{.python filename="__init__.py"}
+# ...
+class Results(Page):
+    pass
+# ...
+```
+
+This class should be sufficent for us, as we don't get any data input from participants in this page. And lets modify `Results.html` as follows:
+
+```{.html filename="Results.html"}
+{{ block title }}
+    Results
+{{ endblock }}
+
+{{ block content }}
+    <p> You guessed {{ player.guess }}. </p>
+    <p> The average guess was . </p>
+    <p> 2/3 of the average was . </p>
+    {{ next_button }}
+{{ endblock }}
+
+```
+
+The HTML templates can reach group fields as they can reach player fields: `{{ group.average_guess }}`. However we don't have these values yet. Before we add them in our template, we need to write function to calculate these values.
+
+### Calculating the results
+
+To calculate the results we need two things: 
+
+- **function**: to write a function that takes the guess of each player and calculates the average guess of the group.
+
+- **trigger**: we need to run this function at the right place[^triggers]. 
+  
+[^triggers]: oTree is quite flexible and you can run functions in different places and different times. For some more information about different information and practices, [see the recipe on triggers](../part_recipes/triggering.qmd) for more information.
+
+We can define functions anywhere in the `__init__.py` file. Usually you put them between your pages and your models[^spliting]
+
+[^spliting]: If you have many functions or your functions are long, it might make sense to put them in some other files. [See the recipe on splitting the `__init__.py` file](../part_recipes/splitting.qmd) for more information.
+
+The function we need takes the group object as input, and should set calculate and set the values on the fields of our group. 
+
+```{.python filename="__init__.py"}
+def set_payoffs(group):
+    players = group.get_players()
+
+    guesses = [p.guess for p in players]
+
+    group.average_guess = sum(guesses) / len(guesses)
+
+    group.target_number = group.average_guess * 2 / 3
+
+    for p in players:
+        p.guess_difference = abs(p.guess - group.target_number)
+
+    guess_differences = [p.guess_difference for p in players]
+
+    minimum_difference = min(guess_differences)
+
+    for p in players:
+        if p.guess_difference == minimum_difference:
+            p.is_winner = True
+
+        if p.is_winner:
+            p.payoff = C.reward
+        else:
+            p.payoff = 0
+    
+```
+
+Now we have to tell oTree to run this function at a precise time after all participants made a guess. (otherwise our calculations will be wrong.) 
+
+oTree WaitPages has a built-in variable: `after_all_players_arrive`. We already had a WaitPage in between our pages called `ResultsWaitPage`. Let's go ahead tell oTree that we want to trigger that function.
+
+```{.python filename="__init__.py"} 
+# ...
+class ResultsWaitPage(WaitPage):
+    after_all_players_arrive = set_payoffs
+# ...
+```
+
+And since we have our group variables ready, we can further update our `Results.html` template.
+
+![](2023-07-31-18-25-10.png)
+
+
+```{.html filename="Results.html"}
+{{ block title }}
+    Results
+{{ endblock }}
+
+{{ block content }}
+You are in Round {{ player.round_number }}.
+
+    <p> Your guess was {{ player.guess }}. </p>
+    <p> The average guess was {{ group.average_guess }}. </p>
+    <p> 2/3 of the average was {{ group.target_number }}. </p>
+
+
+    {{ next_button }}
+    
+{{ endblock }}
+
+```
+![](2023-07-31-18-24-51.png)
+
+```{.html filename="Results.html"}
+{{ block title }}
+    Results
+{{ endblock }}
+
+{{ block content }}
+You are in Round {{ player.round_number }}.
+
+    <p> Your guess was {{ player.guess }}. </p>
+    <p> The average guess was {{ group.average_guess |to2}}. </p>
+    <p> 2/3 of the average was {{ group.target_number|to2 }}. </p>
+    
+
+    {% if player.is_winner %}
+        <p> <strong> You were the winner! </strong></p>
+    {% else %}
+        <p> <strong> You were not the winner. </strong> </p>
+    {% endif %}
+
+    {{ next_button }}
+    
+{{ endblock }}
+
+```
+
+
+

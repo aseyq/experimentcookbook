@@ -1,0 +1,8 @@
+Directories and files we ignore:
+- `__pycache__/`: Contains compiled python files. It is automatically created by python. Just ignore it.
+- `_templates/`: Contains the html files that will be rendered by oTree. We can safely ignore this folder.
+
+Directories and files we rarely care about:
+- `db.sqlite3`: This is the database file when we are running on our own machine. It is automatically created (and recreated) by oTree. Sometimes oTree will ask us to delete this file. We can do that safely.
+
+- `requirements.txt`: This file contains the list of python packages that we need to run our experiment. If we need some special packages, we can add them here. 

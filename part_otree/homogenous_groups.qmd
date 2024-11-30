@@ -1,0 +1,9 @@
+# Homogenous groups
+
+Here be homogenous groups
+
+Some examples:
+
+- Guessing game
+- Beauty contest game
+- Prisoner's Dilemma game (and other symmetric games)

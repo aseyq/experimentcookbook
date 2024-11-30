@@ -1,0 +1,46 @@
+.sourceCode {
+    background-color: #ffffd6 !important;  
+}
+
+code {
+    background-color: #ffffd6 !important;  
+}
+
+/* add a nice frame around the figures class */
+
+.figure {
+    border: 3px solid #b3b3b3;
+    border-radius: 1px;
+    padding: 5px;
+    margin: 5px;
+    background-color: #f7f7f7;
+}
+
+.quarto-cover-image {
+    max-width: 45% !important;
+    float: right !important;
+    margin-left: 30px !important;
+}
+
+.sidebar-title {
+    /* font size */
+    font-size: 1em;
+
+}
+
+.sidebar-logo {
+    max-width: 70% !important;
+    text-align: center !important;
+
+    /* align images in center */
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+
+}
+
+.figure-caption {
+    font-size: 0.9em;
+    font-style: italic;
+    text-align: center;
+}

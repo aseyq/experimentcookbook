@@ -1,0 +1,20 @@
+# Group Experiments
+
+We are now moving forward towards experiments where particpants interact with each other within a group. First let's talk about conceptual differences between individual and group experiments and then lets talk about how to tackle the challenges with it.
+
+The first difference is about the variables. In the individual experiment section, we defined all variables in `Player` class. Each participant needed to access their own variables (and some constants that are the same for everyone). In group experiments, participants need to access the decisions made by other participants in the group. 
+
+In oTree as expected this is done by using `Group` class. When I am in the group, I can call some functions to get the variables defined in my group, and also I can reach to other participants in my group and their variables. 
+
+The second difference now is about the pages. In individual experiments, participants were going through the pages at their own pace. In contrast, in many group experiments, participants need to wait for each other to make their decisions. oTree also handles these interactions. You can put a `WaitPage`, which by default waits for all participants in the group to reach that page before moving on to the next page. You can also execute some functions once everyone in the group reaches that page.
+
+Then there are the questions like who matches who, and what are the roles of the participants in a group. We will postpone these questionsto the section Roles and Matching and we will begin with the case where everybody in the group has the same role and interacts with everyone else in the group. We will call this case **homogenous groups** and then we will move on to **heterogenous groups** where participants have different roles and interact with each other in different ways.
+
+::: {.callout-note}
+## Summary 
+Some conceptual differences between individual and group experiments are:
+
+- In group experiments, participants need to access the decisions made by other participants in the group. 
+- In group experiments, participants need to wait for each other to make their decisions.
+- In group experiments, participants can have different roles and can be matched with each other in different ways.
+:::
