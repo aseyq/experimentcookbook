@@ -1,5 +1,5 @@
 [build]
-  command = "./install_quarto.sh && quarto render"
+  command = "chmod +x install_quarto.sh && ./install_quarto.sh && quarto render"
   publish = "_book"
 
 [build.environment]
