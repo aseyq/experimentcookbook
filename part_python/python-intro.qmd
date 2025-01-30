@@ -4,58 +4,49 @@
 
 Python is a prerequisite for programming experiments in oTree. However, it is much bigger than that. It is one of the most popular general-purpose programming languages in the world. Arguably, its success partially lies in its simplicity. And that is good news for us!
 
-::: {#fig-python-logo}
-![](2023-09-23-22-43-08.png){width=50%}
+![Python Logo](2023-09-23-22-43-08.png){width=50%}
 
-Python Logo
-:::
-
-Another good news is that, Python has a fantastic ecosystem of libraries. This means that it is not necessary to reinvent the wheel each time. For instance if you'd like to use a specific algorithm, (let's say you  have an experiment where you match people and places according to their prefences, using *deferred acceptance algorithm*, you can find several packages for that. 
-
+Another good news is that Python has a fantastic ecosystem of libraries. This means that it is not necessary to reinvent the wheel each time. For instance, if you'd like to use a specific algorithm (let's say you have an experiment where you match people and places according to their preferences, using the *deferred acceptance algorithm*), you can find several packages for that.
 
 Just to whet your appetite, here are some things you can do with Python:
-- Data cleaning, data analysis, statistical modelling
+- Data cleaning, data analysis, statistical modeling
 - Machine Learning applications
-- Agent-Based Modelling
+- Agent-Based Modeling
 - Web Scraping
 - Building web and desktop applications
 
-
-So if you are learning Python for the first time, I'd say this is a very good investment. I hope you'll enjoy it. In this book, however, we will focus on a small subset of Python features that are necessary for us to build experiments and that will be sufficent. So if you like to learn further and expand your Python superpowers, there are many great sources online to learn Python, depending on the path you'd like to follow.
+So if you are learning Python for the first time, I'd say this is a very good investment. I hope you'll enjoy it. In this book, however, we will focus on a small subset of Python features that are necessary for us to build experiments and that will be sufficient. If you like to learn further and expand your Python superpowers, there are many great sources online to learn Python, depending on the path you'd like to follow.
 
 ## How to interact with Python?
 
 ### Option 1: Python Interpreter
-Python, in its core, is a command-line interpreter. This means that you can write Python code in a text editor and run it from the terminal. For instance, you can write a Python script in a text editor, save it as `my_python_file.py`[^python-extension] and run it from the terminal by typing `python my_python_file.py`[^command-helloworld].
+Python, in its core, is a command-line interpreter. This means that you can write Python code in a text editor and run it from the terminal. For instance, you can write a Python script in a text editor, save it as `my_python_file.py`[^python-extension][^command-helloworld] and run it from the terminal by typing:
 
-[^python-extension]: Python scripts take the extension `.py`. You are free to choose the name before the extension for regular Python files. (In oTree we will have a certain structure and naming convention for our Python files though. But don't worry about that for now.)
+```sh
+python my_python_file.py
+```
 
-[^command-helloworld]: If you have Python installed on your computer and you are an impatient person in general, you can go ahead and try this. Create a file called `my_python_file.py` with a single line: `print("Hello World!")`. Then run it from the terminal by typing `python my_python_file.py`. You should see `Hello World!` printed in the terminal. 
+[^python-extension]: Python scripts take the extension `.py`. You are free to choose the name before the extension for regular Python files. (In oTree, we will have a certain structure and naming convention for our Python files, but don't worry about that for now.)
 
-::: {#fig-python-interpreter}
-![](2023-09-23-23-16-55.png)
-:::
+[^command-helloworld]: If you have Python installed on your computer and you are an impatient person in general, you can go ahead and try this. Create a file called `my_python_file.py` with a single line: `print("Hello World!")`. Then run it from the terminal by typing `python my_python_file.py`. You should see `Hello World!` printed in the terminal.
 
+![Python Interpreter](2023-09-23-23-16-55.png)
 
-### Option 3: Development Environment
+### Option 2: Development Environment
 
+Some popular development environments for Python include:
+- **PyCharm**
+- **VSCode**
+- **RStudio**
+- **Jupyter Notebook**
 
-**2- Running a Python Script from the Terminal**
+Most IDEs allow you to execute Python code by pressing `Shift + Enter` or `Ctrl + Enter`.
 
-- Python scripts have the extension `.py`
+### Option 3: Jupyter Notebook
 
-**3- Using a development environment**
+Jupyter Notebook provides a browser-based environment for writing and running interactive Python code. You can combine text and code cells to create a notebook.
 
-* Some of them are `PyCharm`, `VSCode`, `RStudio` and so on.
-
-* Usually `Shift + Enter` or `Ctrl + Enter` to send the command to shell
-
-**4- Jupyter Notebook**
-
-* Browser environment for writing and running interactive Python code.
-
-* You can combine text and code cells to create a notebook.
-
+#### **Common Jupyter Notebook Shortcuts:**
 | Keyboard Shortcut | Description |
 | ---------------- | ----------- |
 | `Shift + Enter`  | Send the cell to the kernel for execution |
@@ -65,14 +56,12 @@ Python, in its core, is a command-line interpreter. This means that you can writ
 | `H`              | Help                    |
 | `M`              | Cell to Markdown (text) |
 | `Y`              | Cell to code            |
-:::
-
 
 ## Hello World!
 
-* To print things in the console, one should use `print()` function. 
+* To print things in the console, one should use the `print()` function. 
 * Let's go ahead and print `Hello World`:
 
-```{python}
+```python
 print("Hello World!")
 ```
