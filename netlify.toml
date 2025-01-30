@@ -1,6 +1,6 @@
 [build]
-command = "quarto render"
-publish = "_book"
+  command = "./install_quarto.sh && quarto render"
+  publish = "_book"
 
 [build.environment]
-QUARTO_VERSION = "1.6.40"
+  QUARTO_VERSION = "1.6.40"
