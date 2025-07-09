@@ -2,5 +2,8 @@
   command = "chmod +x install_quarto.sh && ./install_quarto.sh && quarto render"
   publish = "_book"
 
+[[plugins]]
+package = "@quarto/netlify-plugin-quarto"
+
 [build.environment]
   QUARTO_VERSION = "1.6.40"
