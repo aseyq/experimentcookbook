@@ -1,4 +1,7 @@
-# Rubinstein
+# Rubinstein Bargaining Game
+This section is under construction. Please check back later.
+
+<!-- # Rubinstein
 
 We will create a Rubinstein Bargaining Game with follwing properties:
 
@@ -160,4 +163,4 @@ And we add the page sequence:
 ```
 page_sequence = [Offer, WaitOffer, Response, WaitResponse, Results]
 ```
-
+ -->

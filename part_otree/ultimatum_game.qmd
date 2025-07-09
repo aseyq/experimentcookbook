@@ -1,4 +1,6 @@
 # Ultimatum Game
+ This section is under construction. Please check back later.
+<!--
 
 Ultimatum Game [@guth1982experimental] is a simple bargaining game in which there are two players in distinct roles: **a proposer** and **a responder**. 
 
@@ -319,4 +321,4 @@ Results
 
 ```
 
-* So this concludes the core of our game. We can improve the game in certain ways and of course visually. We will leave this to you at the moment until we cover styling in our next sessions.
+* So this concludes the core of our game. We can improve the game in certain ways and of course visually. We will leave this to you at the moment until we cover styling in our next sessions. -->

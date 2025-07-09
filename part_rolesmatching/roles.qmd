@@ -1,4 +1,6 @@
 # Roles
+This section is under construction. Please check back later.
+<!-- 
 
 
 Another option is to manage heterogeneous groups is to use the **self-defined** built-in function `role()`. 
@@ -109,4 +111,4 @@ self.participant.vars['my_type'] = 'seller`
 ```
 
 Warning
-Neither the values from `participant.vars` nor `role()` method are included in the data export. If you'd like to have them in your data, you should save them in a variable in your model.
+Neither the values from `participant.vars` nor `role()` method are included in the data export. If you'd like to have them in your data, you should save them in a variable in your model. -->

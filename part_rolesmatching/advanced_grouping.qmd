@@ -1,4 +1,7 @@
 # Advanced Grouping
+This section is under construction. Please check back later.
+
+<!-- # Advanced Grouping
 
 Grouping by arrival time group_by_arrival_time = True¶
 
@@ -24,4 +27,4 @@ If group_by_arrival_time = True all players will be initially in the same group 
 
 id_in_group is not assigned in order participants arrive
 
-A group’s id_in_subsession is not necessarily goes from 1 to number of groups. In each grouping a new number is created.
+A group’s id_in_subsession is not necessarily goes from 1 to number of groups. In each grouping a new number is created. -->

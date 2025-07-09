@@ -1,4 +1,7 @@
 # Matching
+This section is under construction. Please check back later.
+
+<!-- # Matching
 
 In this chapter we will discover different matching procedures. Before we continute let's create an app that will allow us to see how the players are matched. 
 
@@ -130,4 +133,4 @@ And our output confirms that it behaves as we like:
 
 Notice that `Player 1` and all the other players can be either in the first or the second position in their group list. Their position in their group coincides with their `id_in_group` as well. 
 
-In some cases we would like to keep the `id_in_group` constant for each player 
+In some cases we would like to keep the `id_in_group` constant for each player  -->

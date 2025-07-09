@@ -1,5 +1,7 @@
 # Heterogenous Groups
 
+This section is under construction. Please check back later.
+<!-- 
 In the few previous sections, we learned how the groups work and we build a game where each individual had the identical role and saw identical screens. 
 
 In this section, we will focus on the case when the players have different roles. Natuarlly, games with heterogeneous agents have some unique aspects we need to handle:
@@ -49,4 +51,4 @@ class IntroTreatmentBaseline(Page):
         return self.session.config['treatment'] == "baseline" & self.round_number == 1
 ```
 
-In the next section, we will build a Trust game using `id_in_group` and `is_displayed()`
+In the next section, we will build a Trust game using `id_in_group` and `is_displayed()` -->

@@ -1,4 +1,7 @@
 # Managing Roles
+This section is under construction. Please check back later.
+
+<!-- # Managing Roles
 
 
 ## Fixed number in roles in fixed groups
@@ -144,4 +147,4 @@ class Player(BasePlayer):
     
 ```
 
-One final note: For the multiple round cases, you can fix `id_in_group` in a random matching by `group_randomly(fixed_id_in_group=True).`
+One final note: For the multiple round cases, you can fix `id_in_group` in a random matching by `group_randomly(fixed_id_in_group=True).` -->
