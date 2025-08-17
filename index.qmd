@@ -1,56 +1,33 @@
 # Preface {.unnumbered}
 
 ::: {.callout-note}
-This book is a work in progress and is being published online as it is written. **The current version is a draft**. 
+This book is a work in progress and is being published online as it is written. **The current version is a draft**.  
 
-We welcome feedback and suggestions. You can provide feedback by opening an issue on the [GitHub repository](https://www.github.com/aseyq/experimentcookbook).
+We welcome feedback and suggestions. You can provide feedback by opening an issue on the [GitHub repository](https://www.github.com/aseyq/experimentcookbook).  
 
-You can of course browse the pages as the book is being written, or you can also can refer to the [slides of the course Ali gave some time ago](https://github.com/aseyq/imprs).
-
+You can, of course, browse the pages as the book is being written, or you can refer to the [slides of the course Ali gave some time ago](https://github.com/aseyq/imprs).  
 :::
 
 #### What is this book about?
-
-This book serves as a guide to programming experiments using [oTree](http://www.otree.org/), a widely-used Python-based framework for behavioral experiments. It originated as lecture notes for an oTree course and has since been updated to reflect the latest version of oTree.
+This book serves as a guide to programming experiments using [oTree](http://www.otree.org/), a widely used Python-based framework for behavioral experiments. It originated as lecture notes for an oTree course and has since been updated to reflect the latest version of oTree.
 
 The book is tailored for researchers, especially those with limited programming experience, who want to design and code their own experiments. It follows a step-by-step approach, simplifying potentially challenging concepts for readers new to programming. Additionally, it includes chapters on advanced topics and a collection of recipes (hence the "cookbook" theme 🙂) to support experienced users.
 
-
-#### Who are we?
-
-:::{.grid}
-::: {.g-col-6}
-**Ali Seyhun Saral** is a data and behavioral scientist at the [CEB, United Nations](https://unsceb.org/). His research focuses on cooperation, group decision-making, and social learning, utilizing methods from microeconomics, game theory, behavioral and experimental economics, agent-based modeling, and social choice theory. He has held positions as a postdoctoral researcher at the [Institute for Advanced Study in Toulouse](https://www.iast.fr/) and the [University of Bologna](https://www.unibo.it/en), as well as serving as a lab manager at the [Max Planck Institute for Research on Collective Goods](https://www.coll.mpg.de/) and the [Bilgi Economics Lab of Istanbul](https://belis.bilgi.edu.tr). 
-
-For more information, visit his [personal website](https://www.saral.it/).
-
-:::
-
-::: {.g-col-6}
-**Austėja Kažemekaitytė** is a postdoctoral research fellow at the [Department of Economics and Management at the University of Trento](https://www.economia.unitn.it/en). Her research centers on individual decision-making within the framework of behavioral economics, with current work involving psychophysiological measures in consumer choice as part of the COMFOCUS project. Austėja's research interests also include vulnerability, the psychology of poverty, and behavioral public policy. 
-
-For more information, visit her [personal website](https://austejakazemekaityte.com/).
-
-:::
-:::
-
-
-
 #### How to use this book?
 
-The book is structured to be as self-contained as possible. While it begins with an introduction to oTree, it assumes some prior knowledge of Python. However, for those new to Python or in need of a refresher, We've included an extensive [crash course in Python](part_python/python-intro.qmd) as an appendix. You can start there and then circle back to the beginning if necessary.
+The book is structured to be as self-contained as possible. While it begins with an introduction to oTree, it assumes some prior knowledge of Python. However, for those new to Python or in need of a refresher, we've included an extensive [crash course in Python](part_python/python-intro.qmd) as an appendix. You can start there and then circle back to the beginning if necessary.
 
 The book is divided into three parts:  
 
-- **Tutorials:** The first part features tutorial chapters with accompanying oTree concepts, indicated by a green icon 📗. These chapters are interconnected, and I recommend that beginners follow them in sequence.  
+- **Tutorials:** The first part features tutorial chapters with accompanying oTree concepts, indicated by a green icon 📗. These chapters are interconnected, and beginners are encouraged to follow them in sequence.  
 
-- **Recipes:** The second part, symbolized by an orange icon 📙, serves as the "cookbook." Here, I provide examples that address common issues or demonstrate frequently used features.  
+- **Recipes:** The second part, symbolized by an orange icon 📙, serves as the "cookbook." Here, we provide examples that address common issues or demonstrate frequently used features.  
 
-- **Appendices:**The final section, "the appendix," includes brief crash courses on related subjects, marked with a ledger icon 📒.
-
+- **Appendices:** The final section, marked with a ledger icon 📒, includes brief crash courses on related subjects.  
 
 #### What is in the pipeline?
-We have plans to expand this book further. Here is a list of topics that have been requested by readers and are currently in development:
+
+We have plans to expand this book further. Here is a list of topics requested by readers that are currently in development:
 
 - Chat functionality between the experimenter and participants  
 - Using bots  
@@ -62,36 +39,67 @@ We have plans to expand this book further. Here is a list of topics that have be
 
 #### How to contribute?
 
-This book was initially envisioned as a collaborative project. However, due to our time constraints, it has remained a primarily two-people team effort. Contributions are still warmly welcomed, and suggestions or feedback can be shared by opening an issue or a pull request on the [GitHub repository](https://www.github.com/aseyq/experimentcookbook). If you need to know more about how to contribute to this book, you can refer to the [CONTRIBUTING file in the repository](https://www.github.com/aseyq/experimentcookbook/blob/main/CONTRIBUTING.md).
-
+This book was initially envisioned as a collaborative project. However, due to time constraints, it has remained primarily a two-person team effort. Contributions are still warmly welcomed, and suggestions or feedback can be shared by opening an issue or a pull request on the [GitHub repository](https://www.github.com/aseyq/experimentcookbook). For more details on contributing, see the [CONTRIBUTING file](https://www.github.com/aseyq/experimentcookbook/blob/main/CONTRIBUTING.md).
 
 <!-- 
-If you find this book useful and would like to contribute to its costs, you can do so by "buying me a coffee" using the button below. 
-<script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="aseyq" data-color="#FFDD00" data-emoji=""  data-font="Cookie" data-text="Buy me a coffee" data-outline-color="#000000" data-font-color="#000000" data-coffee-color="#ffffff" ></script> -->
+If you find this book useful and would like to contribute to its costs, you can do so by "buying me a coffee" using the button below.  
+
+<script 
+  type="text/javascript" 
+  src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" 
+  data-name="bmc-button" 
+  data-slug="aseyq" 
+  data-color="#FFDD00" 
+  data-emoji=""  
+  data-font="Cookie" 
+  data-text="Buy me a coffee" 
+  data-outline-color="#000000" 
+  data-font-color="#000000" 
+  data-coffee-color="#ffffff">  
+</script> 
+-->
 
 #### What are some other resources to learn oTree?
-- [oTree Documentation](https://otree.readthedocs.io/en/latest/)
-- [oTree Course by Matteo Ploner](https://matteoploner.eco.unitn.it/courses/oTreeIntro/oTree.html)
-- [Jonas Frey's oTree Tutorials on YouTube](https://www.youtube.com/watch?v=OzkFvVhoHr0&list=PLBL9eqPcwzGPli11Yighw5LWwzIifEFd_)
 
-(If you have any other resources you'd like to recommend, please let us know!)
+- [oTree Documentation](https://otree.readthedocs.io/en/latest/)  
+- [oTree Course by Matteo Ploner](https://matteoploner.eco.unitn.it/courses/oTreeIntro/oTree.html)  
+- [Jonas Frey's oTree Tutorials on YouTube](https://www.youtube.com/watch?v=OzkFvVhoHr0&list=PLBL9eqPcwzGPli11Yighw5LWwzIifEFd_)  
+
+(If you have other resources to recommend, please let us know!)
+
+#### Who are we?
+We are two researchers with a shared interest in behavioral research and experimental economics.
+
+:::{.grid}
+::: {.g-col-6}
+**Ali Seyhun Saral** is currently a data and behavioral scientist at the [CEB, United Nations](https://unsceb.org/). His research focuses on cooperation, group decision-making, and social learning, utilizing methods from microeconomics, game theory, behavioral and experimental economics, agent-based modeling, and social choice theory. He has held positions as a postdoctoral researcher at the [Institute for Advanced Study in Toulouse](https://www.iast.fr/) and the [University of Bologna](https://www.unibo.it/en), as well as serving as a lab manager at the [Max Planck Institute for Research on Collective Goods](https://www.coll.mpg.de/) and the [Bilgi Economics Lab of Istanbul](https://belis.bilgi.edu.tr).  
+
+For more information, visit his [personal website](https://www.saral.it/).
+:::
+
+::: {.g-col-6}
+**Austėja Kažemekaitytė** is currently a postdoctoral research fellow at the [Department of Economics and Management at the University of Trento](https://www.economia.unitn.it/en). Her research centers on individual decision-making within the framework of behavioral economics, with current work involving psychophysiological measures in consumer choice as part of the COMFOCUS project. Austėja's research interests also include vulnerability, the psychology of poverty, and behavioral public policy.  
+
+For more information, visit her [personal website](https://austejakazemekaityte.com/).
+:::
+:::
 
 #### Acknowledgements
 
-Creating this book would not have been possible without the encouragement and assistance of numerous individuals. While it is impossible to mention everyone, a few deserve special acknowledgment.
+Creating this book would not have been possible without the encouragement and assistance of numerous individuals. While it is impossible to mention everyone, we would like to mention a few of many people who helped us.
 
-Ali Seyhun Saral is grateful to **Christoph Engel** for inspiring the teaching of the oTree course at the Max Planck Institute for Research on Collective Goods and a similar course at the IMPRS Summer School in 2023. I thank the course participants for their engagement and feedback. 
+Ali Seyhun Saral would like to acknowledge **Christoph Engel** for inspiring the teaching of the oTree course at the Max Planck Institute for Research on Collective Goods and a similar course at the IMPRS Summer School in 2023. He thanks the course participants for their engagement and feedback.
 
-Special thanks are due to **Oliver Kirchkamp**, a role model for teaching technical topics to researchers, and to **Matteo Ploner**, whose courses and discussions on best practices have been invaluable.
+Special thanks are due to **Oliver Kirchkamp**, a role model for teaching technical topics to researchers, and to **Matteo Ploner** whose courses and discussions on best practices have been invaluable. And **Ayca Giritligil** who introduced me to the field and gave me responsibility for my first research projects and lab experience.
 
-Moreover we thank those who provided helpful feedback and suggestions: Sandro Ambuehl, Robert Böhm, Esra Dağlı, Özgür Gürerk, Ingar Haaland, Laura Hoenig, Konstantinos Ioannidis, Nathan Maddix, Stefan Schmidt, Filippo Toscano, and Tobias Werner.
+We also thank those who provided helpful feedback and suggestions: Sandro Ambuehl, Robert Böhm, Esra Dağlı, Özgür Gürerk, Ingar Haaland, Laura Hoenig, Konstantinos Ioannidis, Nathan Maddix, Stefan Schmidt, Filippo Toscano, and Tobias Werner.  
 
-This book was inspired by two fantastic projects: [Causal Inference: The Mixtape](https://mixtape.scunning.com/) and [The Turing Way](https://the-turing-way.netlify.app/index.html). Appreciation is extended to the authors and contributors of these projects for their pioneering work.
+This book was inspired by two fantastic projects: [Causal Inference: The Mixtape](https://mixtape.scunning.com/) and [The Turing Way](https://the-turing-way.netlify.app/index.html). Appreciation is extended to the authors and contributors of these projects for their pioneering work.  
 
-Lastly, gratitude is expressed to Chris Wickens, the creator of oTree, for developing an excellent framework and offering continuous support to the community, as well as to the oTree community at large for their ongoing support and feedback.
+Lastly, gratitude is expressed to Chris Wickens, the creator of oTree, for developing a fantastic framework and offering continuous support to the community, as well as to the oTree community at large for their ongoing support and feedback. We also thank Urs Fischbacher, creator of [z-Tree](https://www.ztree.uzh.ch/en.html), and Ben Greiner, creator of [ORSEE](https://www.orsee.org/) for pioneering software projects in experimental economics and generously making their software freely available for the research community and helping to advance the field.
 
-<!-- **Dedications**
+#### Dedication
 
-This book is dedicated to the memories of **Marco Tecilla**, lab manager at the University of Trento, and **Regina Goldschmitt**, head of the library at the Max Planck Institute for Research on Collective Goods. Both contributed immensely to the research of countless individuals behind the scenes and are sorely missed.
+This book is dedicated to the precious memories of **Marco Tecilla**, former lab manager at the University of Trento, and **Regina Goldschmitt**, former head of the library at the Max Planck Institute for Research on Collective Goods. Both contributed immensely to the research of countless individuals behind the scenes and are truly missed.  
 
-It is also dedicated to the unsung heroes of research—those in technical roles, such as research assistants, research engineers, specialists, and lab managers—whose tireless efforts and expertise provide the foundation for many scientific advancements. Their work, often uncredited, is deeply appreciated and indispensable to the success of research projects. -->
+Moreover the book is also dedicated to the unsung heroes of research: those in administrative and technical roles, such as interns, research assistants, research engineers, research officers, librarians, data stewards and other specialists. Their tireless efforts and expertise provide support that is deeply appreciated and indispensable to the advancement of science. 

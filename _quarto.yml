@@ -24,8 +24,8 @@ book:
     - part: 📗 Introduction to oTree
     - part: 📗 Individual Decisions
       chapters: 
-        - part_otree/create-project.qmd
-        - part_otree/survey.qmd
+        - part_otree/individual/create-project.qmd
+        - part_otree/individual/survey.qmd
     - part: "📗 Group Decisions"
       chapters:
         - part_otree/groups-overview.qmd
